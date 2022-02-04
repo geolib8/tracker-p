@@ -2,6 +2,7 @@ const { render } = require('ejs');
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const Post = require('../model/post');
 
 
 
@@ -32,9 +33,27 @@ router.get('/settings', async function(req,res){
         res.render('settings')
         });
 
-router.get('/team', async function(req,res){
+/*router.get('/team', async function(req,res){
     
           res.render('team')
+          });*/
+
+router.get('/team', async function(req,res){
+
+            let posts = await Post.find()
+            res.render('team',{posts});
+            console.log(posts);
           });
-  
+
+router.get('/newTeammate', async function(req,res){
+    
+            res.render('newTeammate')
+            });
+          
+router.post('/newTeammate', async (req,res) =>{
+
+              let post = new Post(req.body)
+              await post.save()
+              res.redirect("/team")
+            });
   module.exports = router;

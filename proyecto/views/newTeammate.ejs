@@ -68,40 +68,13 @@
     </nav>
 
     <div class="home-content">
-      <div class="overview-boxes">
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Team "Name"</div>
-            <div class="number">Alonso</div>
-           <!-- <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">lorem ipsum</span>-->
-              <a href="/newTeammate" class="active">
-                <i class='bx bx-user-plus chart' ></i>
-              </a>
-              <% if(posts.length == 0) { %>
-
-                <h2>There are no Posts</h2>
-              <% } else { for(let i =0; i< posts.length;i++)  {    %>
-                
-
-                <div class="blog-post">
-                 <!-- <h2 class="blog-post-title"><%= posts[i].name  %> </h2>
-                  <p class="blog-post-meta"><%= posts[i].post_date.toDateString()  %> by <a href="#"><%= posts[i].author  %></a>     </p>
-                  <p><%= posts[i].post_data  %></p>-->
-                  <h2 class="blog-post-title"><%= posts[i].title  %> </h2>
-                  <a class = "btn btn-danger" href ="/delete/<%= posts[i]._id  %>"> Delete </a>
-                  <a class = "btn btn-info" href ="/edit/<%= posts[i]._id  %>"> Edit </a>
-                </div>
-        
-                <% }}  %>
-            </div>
-          </div>
-          <!--<a href="/home"><i class='bx bx-user-plus chart'></i></a>-->
-
-    
+      <h2> New teammate</h2>
+      <form action="/newTeammate" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" name="title" placeholder="Name">
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>   
 
   </section>
