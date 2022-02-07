@@ -11,10 +11,9 @@
 <body>
   <div class="main">
     <p class="sign" align="center">Sign in</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Email Address">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <input class="pass" type="password" align="center" placeholder="Confirm Password">
+    <form class="form1" action="/addUser" method = "POST">
+      <input class="un " type="email" align="center" name="email" placeholder="Email Address">
+      <input class="pass" type="password" align="center" name="password" placeholder="Password">
       <a class="submit" href="/" align="center">Start</a>
             
                 

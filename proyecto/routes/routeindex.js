@@ -3,9 +3,10 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const Post = require('../model/post');
+const User = require('../model/user');
 let verify = require('../middleware/verifyaccess');
 let jwt = require("jsonwebtoken");
-
+let bcrypt = require("bcrypt")
 
 
 
@@ -85,5 +86,37 @@ router.get('/register', async function(req,res){
     
                   res.render('register')
                   });
+
+router.post('/addUser', async (req,res) => {
+
+                    let user = new User (req.body)
+                    
+                   // let exists = User.findOne({user_id: user.email})
+                    
+                    //if (!exists) {
+                    
+                    // Hash a la contraseña
+                    
+                    user.password = bcrypt.hashSync(user.password,10)
+                    console.log(user)
+                    //await user.save()
+                    
+                    res.redirect('/')
+                    })
+
+router.get('/login', async function(req,res){
+
+                      res.render('login')
+                      });
+                   
+router.post('/login', async (req,res) => {
+
+                      let email = req.body.email
+                      let plainpassword = req.body.password
+                      
+                      console.log(email)
+                      console.log(password)
+                      })
+                      
   module.exports = router;
 
