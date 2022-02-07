@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/messages.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -68,16 +68,23 @@
     </nav>
 
     <div class="home-content">
-      <div class="overview-boxes">
-        <div class="box">
-          <div class="right-side">
-           <!-- <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">lorem ipsum</span>-->
-              <a href="/newMessage" class="active">
-                <i class='bx bxs-comment-add chart' ></i></a>
+        <h2> New Entrie</h2>
+        <form action="/newTeammate" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="title" placeholder="from:">
+          </div>
+          <div class="form-group">
+            <input type="text" name="author" class="form-control" placeholder="to:">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="post_data" cols="100" rows="10"
+              placeholder="Add a Description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>  
 
-            
+
 
   </section>
   <script src="js/messages.js"></script>
