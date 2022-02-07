@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/addteammate.css">
+    <link rel="stylesheet" href="css/messages.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -55,7 +55,7 @@
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Team</span>
+        <span class="dashboard">Messages</span>
       </div>
       <div class="search-box">
         <input type="text" placeholder="Search...">
@@ -68,21 +68,26 @@
     </nav>
 
     <div class="home-content">
-      <h2> New teammate</h2>
-      <form action="/newTeammate" method="POST">
-        <div class="form-group">
-          <input type="text" class="form-control" name="title" placeholder="Name">
-        </div>
-        <span><button type="" class="btn btn-primary">Submit</button></span>
-      </form>
-    </div>   
+        <h2> New Entrie</h2>
+        <form action="/newMessage" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="title" placeholder="from:">
+          </div>
+          <div class="form-group">
+            <input type="text" name="author" class="form-control" placeholder="to:">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="post_data" cols="100" rows="10"
+              placeholder="Add a Description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>  
+
+
 
   </section>
-<<<<<<< HEAD
-  <script src="home.js"></script>
-=======
-  <script src="js/homej.js"></script>
->>>>>>> 60e8d46969461dd2612f08861529d7fad5a3a4bf
+  <script src="js/messages.js"></script>
 </body>
 </html>
 

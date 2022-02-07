@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const Post = require('../model/post');
+//const Post1 = require('../model/messpost');
 const User = require('../model/user');
 let verify = require('../middleware/verifyaccess');
 let jwt = require("jsonwebtoken");
@@ -32,6 +33,19 @@ router.get('/messages', async function(req,res){
     
       res.render('messages')
       });
+
+
+router.get('/newMessage', async function(req,res){
+    
+        res.render('newMessage')
+        });
+
+router.post('/newMessage', async (req,res) =>{
+
+          let post = new Post(req.body)
+          await post.save()
+          res.redirect("/messages")
+        });
 
 router.get('/settings', async function(req,res){
     
@@ -104,7 +118,7 @@ router.post('/addUser', async (req,res) => {
                     console.log(user)
                     //await user.save()
                     
-                    res.redirect('/')
+                    res.redirect('/team')
                     })
 
 router.get('/login', async function(req,res){
@@ -120,6 +134,10 @@ router.post('/login', async (req,res) => {
                       console.log(email)
                       console.log(password)
                       })
+                    
+
+                      
+
                       
   module.exports = router;
 
