@@ -56,4 +56,19 @@ router.post('/newTeammate', async (req,res) =>{
               await post.save()
               res.redirect("/team")
             });
+
+router.post('/delete/:id', async (req,res) =>{
+              let id = req.params.id
+              await Post.remove({_id:req.params.id},req.body)
+              res.redirect("/team")
+            });
+            
+            
+router.get('/delete/:id', async (req,res) =>{
+              let id = req.params.id
+              let post = await Post.findById(id)
+              res.render('delete',{post});
+            });
   module.exports = router;
+
+  
