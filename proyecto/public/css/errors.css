@@ -377,6 +377,17 @@ nav .profile-details i{
   justify-content: space-between;
   margin: 10px 0;
 }
+
+.buglist{
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bugTable {
+  display: flex;
+  justify-content: space-around;
+}
 .data-boxes .more-details li a img{
   height: 40px;
   width: 40px;
