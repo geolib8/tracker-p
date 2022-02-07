@@ -3,14 +3,16 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const Post = require('../model/post');
+let verify = require('../middleware/verifyaccess');
+let jwt = require("jsonwebtoken");
 
 
 
 
-router.get('/', async function(req,res){
+router.get('/', verify, async function(req,res){
   //res.sendFile(path.join(__dirname, '/../views/home.html'));
   //res.redirect("/")
-  res.render('home')
+  res.render('logins')
   });
 
   router.get('/errors', async function(req,res){
@@ -69,6 +71,19 @@ router.get('/delete/:id', async (req,res) =>{
               let post = await Post.findById(id)
               res.render('delete',{post});
             });
+
+router.get('/cancel', async function(req,res){
+    
+              res.render('team')
+              });
+router.get('/login', async function(req,res){
+    
+                res.render('login')
+                });
+
+router.get('/register', async function(req,res){
+    
+                  res.render('register')
+                  });
   module.exports = router;
 
-  
