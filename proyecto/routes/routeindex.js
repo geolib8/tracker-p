@@ -21,6 +21,8 @@ router.get('/', verify, async function(req,res){
     res.render('errors')
     });
 
+
+
 router.get('/login', async function(req,res){
     
       res.render('login')
@@ -47,6 +49,7 @@ router.get('/team', async function(req,res){
             res.render('team',{posts});
             console.log(posts);
           });
+
 
 router.get('/newTeammate', async function(req,res){
     

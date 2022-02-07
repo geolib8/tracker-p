@@ -67,6 +67,61 @@
       </div>
     </nav>
 
+
+    <div class="home-content">
+      <div class="overview-boxes">
+
+      <div class="data-boxes">
+
+      
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+             <form action="/add" method="post">
+               <div class="form-group">
+                  <input class="form-control" type="text" name="title" placeholder="Bug Title">
+               </div>
+               <div class="form-group">
+                <input class="form-control" type="text" name="author" placeholder="Author">
+             </div>
+             <div class="form-group">
+              <input class="form-control" type="text" name="status" placeholder="Status">
+           </div>
+           <div class="form-group">
+            <input class="form-control" type="text" name="team" placeholder="Team">
+         </div>
+         <div class="form-group">
+          <input class="form-control" type="text" name="severity" placeholder="Severity">
+       </div>
+              <button class="btn btn-primary" type="submit">
+              Add
+              </button>
+             </form>
+            </div>
+          </div>
+       </div>
+        <div class ="buglist">
+          <table class= "bugTable">
+
+            <thead>
+                <tr>
+                        <th>bug</th>
+                        <th>Author</th>
+                        <th>created</th>
+                        <th>status</th>
+                        <th>team</th>
+                        <th>Severity</th>
+                </tr>
+        
+            </thead>
+          
+                </table>
+        </div>
+          </div>
+        </div>
+      </div>
+
+
   </section>
   <script src="js/errors.js"></script>
 </body>
